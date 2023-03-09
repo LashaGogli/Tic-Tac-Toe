@@ -18,6 +18,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    display: none;
 
 }
 
@@ -147,6 +148,140 @@ h1 {
     font-size: 20px;
     line-height: 25px;
     letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #1A2A33;
+}
+
+
+
+
+
+
+
+
+
+.secondContainer {
+    width: 461px;
+    height: 623px;
+    background-color: #1A2A33;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.uperDiv {
+    width: 100%;
+    height: 52px;
+    background-color: #1A2A33;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playBoardDiv {
+    width: 100%;
+    height: 460px;
+    background-color: #1A2A33;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 21px;
+
+}
+
+.bottomDiv {
+    width: 100%;
+    height: 72px;
+    background-color: #1A2A33;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.clickDivs {
+    background: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 15px;
+}
+
+.turnDiv {
+    width: 140px;
+    height: 52px;
+    background: #1F3641;
+    box-shadow: inset 0px -4px 0px #10212A;
+    border-radius: 10px;
+}
+
+.restartbutton {
+    width: 52px;
+    height: 52px;
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+}
+
+.turnSpan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #A8BFC9;
+}
+
+.turnDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 19px;
+}
+
+.calculateDivs {
+    width: 140px;
+    height: 72px;
+    left: 491px;
+    top: 690px;
+    background: #31C3BD;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 13px;
+    padding-bottom: 11px;
+}
+
+#meore {
+    background: #A8BFC9;
+
+}
+
+#mesame {
+    background: #F2B137;
+}
+
+.xYou {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.875px;
+    color: #1A2A33;
+}
+
+.DowntoYouspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #1A2A33;
 }
