@@ -24,11 +24,12 @@ divforY.addEventListener("click", function () {
 secondPage = document.querySelector(".secondPage");
 firstPage = document.querySelector(".firstPage");
 newgamePlayer = document.querySelector(".newgamePlayer");
+vsplayer = document.querySelector(".vsplayer");
 forFirst = document.querySelector("#forFirst");
 forSecond = document.querySelector("#forSecond");
 
 
-newgamePlayer.addEventListener("click", function () {
+vsplayer.addEventListener("click", function () {
     firstPage.style.display = "none";
     secondPage.style.display = "block";
     if (turnOfX == 1) {
@@ -40,20 +41,25 @@ newgamePlayer.addEventListener("click", function () {
     }
 })
 
+let takesround = document.querySelectorAll(".takesround");
 let clickDivs = document.querySelectorAll(".clickDivs");
 let xturnimg = document.querySelector(".xturnimg");
 let oturnimg = document.querySelector(".oturnimg");
 let switchtries = 0;
 let board = ['', '', '', '', '', '', '', '', ''];
 
+
 function checkWinningCondition(array) {
     if ((array[0] == "X" && array[1] == "X" && array[2] == "X") || (array[3] == "X" && array[4] == "X" && array[5] == "X") || (array[6] == "X" && array[7] == "X" && array[8] == "X") || (array[0] == "X" && array[4] == "X" && array[8] == "X") || (array[2] == "X" && array[4] == "X" && array[6] == "X")) {
-        console.log("X Won");
+        takesround.forEach(element => element.style.display = "flex");
+
     } else if ((array[0] == "O" && array[1] == "O" && array[2] == "O") || (array[3] == "O" && array[4] == "O" && array[5] == "O") || (array[6] == "O" && array[7] == "O" && array[8] == "O") || (array[0] == "O" && array[4] == "O" && array[8] == "O") || (array[2] == "O" && array[4] == "O" && array[6] == "O")) {
-        console.log("O Won");
+        takesround.forEach(element => element.style.display = "flex");
+
     }
 
 }
+
 
 clickDivs.forEach((div, index) => {
     div.addEventListener("click", function () {
@@ -67,8 +73,9 @@ clickDivs.forEach((div, index) => {
                 div.appendChild(img);
                 board[index] = "X";
                 checkWinningCondition(board);
+                switchtries++;
             }
-            
+
         } else {
             if (board[index] == "") {
                 oturnimg.style.display = "none";
@@ -78,12 +85,13 @@ clickDivs.forEach((div, index) => {
                 div.appendChild(img2);
                 board[index] = "O";
                 checkWinningCondition(board);
+                switchtries++;
             }
         }
-        switchtries++;
-
-
 
     })
 });
+
+
+
 
