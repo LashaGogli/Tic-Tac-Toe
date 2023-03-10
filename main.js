@@ -51,6 +51,14 @@ let xturnimg = document.querySelector(".xturnimg");
 let oturnimg = document.querySelector(".oturnimg");
 let switchtries = 0;
 let board = ['', '', '', '', '', '', '', '', ''];
+let container = document.querySelector(".container");
+let secondContainer = document.querySelector(".secondContainer");
+let uperDiv = document.querySelector(".uperDiv");
+let playBoardDiv = document.querySelector(".playBoardDiv");
+let bottomDiv = document.querySelector(".bottomDiv");
+
+
+
 
 
 function checkWinningCondition(array) {
@@ -58,13 +66,33 @@ function checkWinningCondition(array) {
         takesround.forEach(element => element.style.display = "flex");
         xTakesRound.style.display = "block";
         oTakesRound.style.display = "none";
+        container.style.backgroundColor = "#000000";
+        secondContainer.style.backgroundColor = "#000000";
+        uperDiv.style.backgroundColor = "#000000";
+        uperDiv.style.opacity = "0.5";
+        playBoardDiv.style.backgroundColor = "#000000";
+        playBoardDiv.style.opacity = "0.5";
+        bottomDiv.style.backgroundColor = "#000000";
+        bottomDiv.style.opacity = "0.5";
+
+       
 
 
     } else if ((array[0] == "O" && array[1] == "O" && array[2] == "O") || (array[3] == "O" && array[4] == "O" && array[5] == "O") || (array[6] == "O" && array[7] == "O" && array[8] == "O") || (array[0] == "O" && array[4] == "O" && array[8] == "O") || (array[2] == "O" && array[4] == "O" && array[6] == "O") || (array[0] == "O" && array[3] == "O" && array[6] == "O") || (array[1] == "O" && array[4] == "O" && array[7] == "O") || (array[2] == "O" && array[5] == "O" && array[8] == "O")) {
         takesround.forEach(element => element.style.display = "flex");
         oTakesRound.style.display = "block";
         xTakesRound.style.display = "none";
-       
+        container.style.backgroundColor = "#000000";
+        secondContainer.style.backgroundColor = "#000000";
+        uperDiv.style.backgroundColor = "#000000";
+        uperDiv.style.opacity = "0.5";
+        playBoardDiv.style.backgroundColor = "#000000";
+        playBoardDiv.style.opacity = "0.5";
+        bottomDiv.style.backgroundColor = "#000000";
+        bottomDiv.style.opacity = "0.5";
+
+     
+
 
 
     } else if (array.every(cell => cell != "")) {
@@ -73,6 +101,16 @@ function checkWinningCondition(array) {
         oTakesRound.style.display = "none";
         takesroundspanspan.style.display = "none";
         roundtied.style.display = "block";
+        container.style.backgroundColor = "#000000";
+        secondContainer.style.backgroundColor = "#000000";
+        uperDiv.style.backgroundColor = "#000000";
+        uperDiv.style.opacity = "0.5";
+        playBoardDiv.style.backgroundColor = "#000000";
+        playBoardDiv.style.opacity = "0.5";
+        bottomDiv.style.backgroundColor = "#000000";
+        bottomDiv.style.opacity = "0.5";
+
+     
     }
 
 

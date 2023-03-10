@@ -16,7 +16,7 @@
 .firstPage {
     width: 461px;
     height: 471px;
-    background-color: #1A2A33;
+    /* background-color: #1A2A33; */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
