@@ -3,6 +3,8 @@ let divforX = document.querySelector(".divforX");
 let oShape = document.querySelector(".oShape path");
 let divforY = document.querySelector(".divforY");
 let turnOfX = 0;
+let oTakesRound = document.querySelector(".oTakesRound");
+let xTakesRound = document.querySelector(".xTakesRound");
 
 
 divforX.addEventListener("click", function () {
@@ -41,6 +43,8 @@ vsplayer.addEventListener("click", function () {
     }
 })
 
+let takesroundspanspan = document.querySelector("#takesroundspanspan");
+let roundtied = document.querySelector("#roundtied");
 let takesround = document.querySelectorAll(".takesround");
 let clickDivs = document.querySelectorAll(".clickDivs");
 let xturnimg = document.querySelector(".xturnimg");
@@ -50,25 +54,37 @@ let board = ['', '', '', '', '', '', '', '', ''];
 
 
 function checkWinningCondition(array) {
-    if ((array[0] == "X" && array[1] == "X" && array[2] == "X") || (array[3] == "X" && array[4] == "X" && array[5] == "X") || (array[6] == "X" && array[7] == "X" && array[8] == "X") || (array[0] == "X" && array[4] == "X" && array[8] == "X") || (array[2] == "X" && array[4] == "X" && array[6] == "X")) {
+    if ((array[0] == "X" && array[1] == "X" && array[2] == "X") || (array[3] == "X" && array[4] == "X" && array[5] == "X") || (array[6] == "X" && array[7] == "X" && array[8] == "X") || (array[0] == "X" && array[4] == "X" && array[8] == "X") || (array[2] == "X" && array[4] == "X" && array[6] == "X") || (array[0] == "X" && array[3] == "X" && array[6] == "X") || (array[1] == "X" && array[4] == "X" && array[7] == "X") || (array[2] == "X" && array[5] == "X" && array[8] == "X")) {
         takesround.forEach(element => element.style.display = "flex");
+        xTakesRound.style.display = "block";
+        oTakesRound.style.display = "none";
 
 
-    } else if ((array[0] == "O" && array[1] == "O" && array[2] == "O") || (array[3] == "O" && array[4] == "O" && array[5] == "O") || (array[6] == "O" && array[7] == "O" && array[8] == "O") || (array[0] == "O" && array[4] == "O" && array[8] == "O") || (array[2] == "O" && array[4] == "O" && array[6] == "O")) {
+    } else if ((array[0] == "O" && array[1] == "O" && array[2] == "O") || (array[3] == "O" && array[4] == "O" && array[5] == "O") || (array[6] == "O" && array[7] == "O" && array[8] == "O") || (array[0] == "O" && array[4] == "O" && array[8] == "O") || (array[2] == "O" && array[4] == "O" && array[6] == "O") || (array[0] == "O" && array[3] == "O" && array[6] == "O") || (array[1] == "O" && array[4] == "O" && array[7] == "O") || (array[2] == "O" && array[5] == "O" && array[8] == "O")) {
         takesround.forEach(element => element.style.display = "flex");
-  
+        oTakesRound.style.display = "block";
+        xTakesRound.style.display = "none";
+       
 
+
+    } else if (array.every(cell => cell != "")) {
+        takesround.forEach(element => element.style.display = "flex");
+        xTakesRound.style.display = "none";
+        oTakesRound.style.display = "none";
+        takesroundspanspan.style.display = "none";
+        roundtied.style.display = "block";
     }
 
 
 }
 
 
+
 clickDivs.forEach((div, index) => {
     div.addEventListener("click", function () {
         if (takesround[0].style.display === "flex") {
             return;
-          }
+        }
 
         if (switchtries % 2 == 0) {
             if (board[index] == "") {
