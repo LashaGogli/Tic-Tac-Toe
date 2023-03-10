@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .firstPage {
@@ -18,7 +19,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    
+
 
 }
 
@@ -162,7 +163,7 @@ h1 {
 
 
 
-.secondPage{
+.secondPage {
     display: none;
 }
 
@@ -297,9 +298,94 @@ h1 {
     text-transform: uppercase;
     color: #1A2A33;
 }
-.xturnimg{
+
+.xturnimg {
     display: block;
 }
-.oturnimg{
+
+.oturnimg {
     display: none;
+}
+
+
+
+.takesround {
+    max-width: 100vw;
+    width: 100%;
+    height: 266px;
+    background: #1F3641;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.takesroundDiv {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.quitorcontinueDiv {
+    width: 235px;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.takeroundspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #F2B137;
+}
+
+.quitdiv {
+    width: 76px;
+    height: 52px;
+    background: #DBE8ED;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextrounddiv {
+    width: 146px;
+    height: 52px;
+    background: #FFC860;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quitspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #1A2A33;
+}
+
+.nextroundspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #1A2A33;
 }
