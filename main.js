@@ -180,16 +180,18 @@ quitdiv.addEventListener("click", function () {
     takesround.forEach(element => element.style.display = "none");
     scoreX = 0;
     xScore.innerHTML = scoreX;
+    localStorage.setItem("score", scoreX);
     scoreO = 0;
     oScore.innerHTML = scoreO;
+    localStorage.setItem("score2", scoreO);
     scoreTie = 0;
     tieScore.innerHTML = scoreTie;
+    localStorage.setItem("score3", scoreTie);
     switchtries = 0;
     clickDivs.forEach(div => {
         div.innerHTML = "";
     });
     board = ['', '', '', '', '', '', '', '', ''];
-
     container.style.backgroundColor = "#1A2A33";
     secondContainer.style.backgroundColor = "#1A2A33";
     uperDiv.style.backgroundColor = "#1A2A33";
@@ -206,4 +208,27 @@ quitdiv.addEventListener("click", function () {
 })
 
 
+let nextrounddiv = document.querySelector(".nextrounddiv");
+
+nextrounddiv.addEventListener("click", function () {
+    secondPage.style.display = "flex";
+    takesround.forEach(element => element.style.display = "none");
+    switchtries = 0;
+    clickDivs.forEach(div => {
+        div.innerHTML = "";
+    });
+    board = ['', '', '', '', '', '', '', '', ''];
+    container.style.backgroundColor = "#1A2A33";
+    secondContainer.style.backgroundColor = "#1A2A33";
+    uperDiv.style.backgroundColor = "#1A2A33";
+    uperDiv.style.opacity = "1";
+    playBoardDiv.style.backgroundColor = "#1A2A33";
+    playBoardDiv.style.opacity = "1";
+    bottomDiv.style.backgroundColor = "#1A2A33";
+    bottomDiv.style.opacity = "1";
+    xsvg.style.backgroundColor = "#1A2A33";
+    xsvg.style.opacity = "1";
+    osvg.style.backgroundColor = "#1A2A33";
+    osvg.style.opacity = "1";
+})
 
