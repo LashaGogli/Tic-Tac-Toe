@@ -232,3 +232,61 @@ nextrounddiv.addEventListener("click", function () {
     osvg.style.opacity = "1";
 })
 
+let restartbutton = document.querySelector(".restartbutton");
+let restartGame = document.querySelector(".restartGame");
+let cancelDiv = document.querySelector(".cancelDiv");
+let yesrestartdiv = document.querySelector(".yesrestartdiv");
+
+restartbutton.addEventListener("click", function () {
+    restartGame.style.display = "flex";
+    container.style.backgroundColor = "#000000";
+    secondContainer.style.backgroundColor = "#000000";
+    uperDiv.style.backgroundColor = "#000000";
+    uperDiv.style.opacity = "0.5";
+    playBoardDiv.style.backgroundColor = "#000000";
+    playBoardDiv.style.opacity = "0.5";
+    bottomDiv.style.backgroundColor = "#000000";
+    bottomDiv.style.opacity = "0.5";
+    xsvg.style.backgroundColor = "#000000";
+    xsvg.style.opacity = "0.5";
+    osvg.style.backgroundColor = "#000000";
+    osvg.style.opacity = "0.5";
+})
+
+cancelDiv.addEventListener("click", function () {
+    restartGame.style.display = "none";
+    container.style.backgroundColor = "#1A2A33";
+    secondContainer.style.backgroundColor = "#1A2A33";
+    uperDiv.style.backgroundColor = "#1A2A33";
+    uperDiv.style.opacity = "1";
+    playBoardDiv.style.backgroundColor = "#1A2A33";
+    playBoardDiv.style.opacity = "1";
+    bottomDiv.style.backgroundColor = "#1A2A33";
+    bottomDiv.style.opacity = "1";
+    xsvg.style.backgroundColor = "#1A2A33";
+    xsvg.style.opacity = "1";
+    osvg.style.backgroundColor = "#1A2A33";
+    osvg.style.opacity = "1";
+})
+
+yesrestartdiv.addEventListener("click",function(){
+    restartGame.style.display = "none";
+    container.style.backgroundColor = "#1A2A33";
+    secondContainer.style.backgroundColor = "#1A2A33";
+    uperDiv.style.backgroundColor = "#1A2A33";
+    uperDiv.style.opacity = "1";
+    playBoardDiv.style.backgroundColor = "#1A2A33";
+    playBoardDiv.style.opacity = "1";
+    bottomDiv.style.backgroundColor = "#1A2A33";
+    bottomDiv.style.opacity = "1";
+    xsvg.style.backgroundColor = "#1A2A33";
+    xsvg.style.opacity = "1";
+    osvg.style.backgroundColor = "#1A2A33";
+    osvg.style.opacity = "1";
+    switchtries = 0;
+    clickDivs.forEach(div => {
+        div.innerHTML = "";
+    });
+    board = ['', '', '', '', '', '', '', '', ''];
+})
+

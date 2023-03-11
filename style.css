@@ -24,10 +24,12 @@
 
 
 }
-.osvg{
+
+.osvg {
     background-color: #1A2A33;
 }
-.xsvg{
+
+.xsvg {
     background-color: #1A2A33;
 }
 
@@ -174,7 +176,7 @@ h1 {
 .secondPage {
     display: none;
 
- 
+
 }
 
 .secondContainer {
@@ -240,6 +242,7 @@ h1 {
     background: #A8BFC9;
     box-shadow: inset 0px -4px 0px #6B8997;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .turnSpan {
@@ -316,7 +319,8 @@ h1 {
 .oturnimg {
     display: none;
 }
-#roundtied{
+
+#roundtied {
     color: #A8BFC9;
     display: none;
 }
@@ -406,5 +410,88 @@ h1 {
     line-height: 20px;
     text-align: center;
     letter-spacing: 1px;
+    color: #1A2A33;
+}
+
+.restartGame {
+    max-width: 100vw;
+    width: 100%;
+    height: 266px;
+    background: #1F3641;
+    position: absolute;
+    /* display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center; */
+    top: 50%;
+    transform: translate(0, -50%);
+
+}
+
+#restartgamespan {
+    color: #A8BFC9;
+}
+
+.cancelDiv {
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    width: 139px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.yesrestartdiv {
+    background: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+    border-radius: 10px;
+    width: 151px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cancelorrstartdiv {
+    display: flex;
+    justify-content: space-between;
+    width: 305px;
+}
+
+.restartGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    align-items: center;
+    display: none;
+}
+
+.cancelspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1A2A33;
+}
+
+.yesrestartspan {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     color: #1A2A33;
 }
