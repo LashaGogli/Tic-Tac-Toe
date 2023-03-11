@@ -204,6 +204,9 @@ quitdiv.addEventListener("click", function () {
     xsvg.style.opacity = "1";
     osvg.style.backgroundColor = "#1A2A33";
     osvg.style.opacity = "1";
+    xturnimg.style.display = "block";
+    oturnimg.style.display = "none";
+    
 
 })
 
@@ -230,6 +233,8 @@ nextrounddiv.addEventListener("click", function () {
     xsvg.style.opacity = "1";
     osvg.style.backgroundColor = "#1A2A33";
     osvg.style.opacity = "1";
+    xturnimg.style.display = "block";
+    oturnimg.style.display = "none";
 })
 
 let restartbutton = document.querySelector(".restartbutton");
@@ -283,10 +288,12 @@ yesrestartdiv.addEventListener("click",function(){
     xsvg.style.opacity = "1";
     osvg.style.backgroundColor = "#1A2A33";
     osvg.style.opacity = "1";
-    switchtries = 0;
+        switchtries = 0;
     clickDivs.forEach(div => {
         div.innerHTML = "";
     });
     board = ['', '', '', '', '', '', '', '', ''];
+    xturnimg.style.display = "block";
+    oturnimg.style.display = "none";
 })
 
