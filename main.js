@@ -5,6 +5,44 @@ let divforY = document.querySelector(".divforY");
 let turnOfX = 0;
 let oTakesRound = document.querySelector(".oTakesRound");
 let xTakesRound = document.querySelector(".xTakesRound");
+let secondPage = document.querySelector(".secondPage");
+let firstPage = document.querySelector(".firstPage");
+let newgamePlayer = document.querySelector(".newgamePlayer");
+let vsplayer = document.querySelector(".vsplayer");
+let forFirst = document.querySelector("#forFirst");
+let forSecond = document.querySelector("#forSecond");
+let xScore = document.querySelector("#xScore");
+let scoreX = parseInt(localStorage.getItem("score")) || 0;
+xScore.innerHTML = scoreX;
+let oScore = document.querySelector("#oScore");
+let scoreO = parseInt(localStorage.getItem("score2")) || 0;
+oScore.innerHTML = scoreO;
+let tieScore = document.querySelector("#tieScore");
+let scoreTie = parseInt(localStorage.getItem("score3")) || 0;
+scoreTie.innerHTML = scoreTie;
+let takesroundspanspan = document.querySelector("#takesroundspanspan");
+let roundtied = document.querySelector("#roundtied");
+let takesround = document.querySelectorAll(".takesround");
+let clickDivs = document.querySelectorAll(".clickDivs");
+let xturnimg = document.querySelector(".xturnimg");
+let oturnimg = document.querySelector(".oturnimg");
+let switchtries = 0;
+let board = ['', '', '', '', '', '', '', '', ''];
+let container = document.querySelector(".container");
+let secondContainer = document.querySelector(".secondContainer");
+let uperDiv = document.querySelector(".uperDiv");
+let playBoardDiv = document.querySelector(".playBoardDiv");
+let bottomDiv = document.querySelector(".bottomDiv");
+let xsvg = document.querySelector(".xsvg");
+let osvg = document.querySelector(".osvg");
+let nextrounddiv = document.querySelector(".nextrounddiv");
+let restartbutton = document.querySelector(".restartbutton");
+let restartGame = document.querySelector(".restartGame");
+let cancelDiv = document.querySelector(".cancelDiv");
+let yesrestartdiv = document.querySelector(".yesrestartdiv");
+let quitdiv = document.querySelector(".quitdiv");
+let vscpu = document.querySelector(".vscpu");
+let newgameplayerscheck = 0;
 
 divforX.addEventListener("click", function () {
     divforX.style.backgroundColor = "#A8BFC9";
@@ -22,26 +60,7 @@ divforY.addEventListener("click", function () {
     turnOfX--;
 })
 
-let secondPage = document.querySelector(".secondPage");
-let firstPage = document.querySelector(".firstPage");
-let newgamePlayer = document.querySelector(".newgamePlayer");
-let vsplayer = document.querySelector(".vsplayer");
-let forFirst = document.querySelector("#forFirst");
-let forSecond = document.querySelector("#forSecond");
-let xScore = document.querySelector("#xScore");
-let scoreX = parseInt(localStorage.getItem("score")) || 0;
-xScore.innerHTML = scoreX;
-let oScore = document.querySelector("#oScore");
-let scoreO = parseInt(localStorage.getItem("score2")) || 0;
-oScore.innerHTML = scoreO;
-let tieScore = document.querySelector("#tieScore");
-let scoreTie = parseInt(localStorage.getItem("score3")) || 0;
-scoreTie.innerHTML = scoreTie;
-
-
-
 vsplayer.addEventListener("click", function () {
-
     firstPage.style.display = "none";
     secondPage.style.display = "block";
     if (turnOfX == 1) {
@@ -52,22 +71,6 @@ vsplayer.addEventListener("click", function () {
         forSecond.innerHTML = "O (Player 1)"
     }
 })
-
-let takesroundspanspan = document.querySelector("#takesroundspanspan");
-let roundtied = document.querySelector("#roundtied");
-let takesround = document.querySelectorAll(".takesround");
-let clickDivs = document.querySelectorAll(".clickDivs");
-let xturnimg = document.querySelector(".xturnimg");
-let oturnimg = document.querySelector(".oturnimg");
-let switchtries = 0;
-let board = ['', '', '', '', '', '', '', '', ''];
-let container = document.querySelector(".container");
-let secondContainer = document.querySelector(".secondContainer");
-let uperDiv = document.querySelector(".uperDiv");
-let playBoardDiv = document.querySelector(".playBoardDiv");
-let bottomDiv = document.querySelector(".bottomDiv");
-let xsvg = document.querySelector(".xsvg");
-let osvg = document.querySelector(".osvg");
 
 function checkWinningCondition(array) {
     if ((array[0] == "X" && array[1] == "X" && array[2] == "X") || (array[3] == "X" && array[4] == "X" && array[5] == "X") || (array[6] == "X" && array[7] == "X" && array[8] == "X") || (array[0] == "X" && array[4] == "X" && array[8] == "X") || (array[2] == "X" && array[4] == "X" && array[6] == "X") || (array[0] == "X" && array[3] == "X" && array[6] == "X") || (array[1] == "X" && array[4] == "X" && array[7] == "X") || (array[2] == "X" && array[5] == "X" && array[8] == "X")) {
@@ -89,7 +92,6 @@ function checkWinningCondition(array) {
         scoreX++;
         localStorage.setItem("score", scoreX);
         xScore.innerHTML = scoreX;
-
 
     } else if ((array[0] == "O" && array[1] == "O" && array[2] == "O") || (array[3] == "O" && array[4] == "O" && array[5] == "O") || (array[6] == "O" && array[7] == "O" && array[8] == "O") || (array[0] == "O" && array[4] == "O" && array[8] == "O") || (array[2] == "O" && array[4] == "O" && array[6] == "O") || (array[0] == "O" && array[3] == "O" && array[6] == "O") || (array[1] == "O" && array[4] == "O" && array[7] == "O") || (array[2] == "O" && array[5] == "O" && array[8] == "O")) {
         takesround.forEach(element => element.style.display = "flex");
@@ -137,42 +139,39 @@ function checkWinningCondition(array) {
 
 clickDivs.forEach((div, index) => {
     div.addEventListener("click", function () {
-        if (takesround[0].style.display === "flex") {
-            return;
-        }
-
-        if (switchtries % 2 == 0) {
-            if (board[index] == "") {
-                xturnimg.style.display = "none";
-                oturnimg.style.display = "block";
-                let img = document.createElement('img');
-                img.src = 'WhilePlayingX.png';
-                div.appendChild(img);
-                board[index] = "X";
-                checkWinningCondition(board);
-                switchtries++;
+        if (newgameplayerscheck == 0) {
+            if (takesround[0].style.display === "flex") {
+                return;
             }
 
-        } else {
-            if (board[index] == "") {
-                oturnimg.style.display = "none";
-                xturnimg.style.display = "block";
-                let img2 = document.createElement('img');
-                img2.src = 'WhilePlayingO.png';
-                div.appendChild(img2);
-                board[index] = "O";
-                checkWinningCondition(board);
-                switchtries++;
+            if (switchtries % 2 == 0) {
+                if (board[index] == "") {
+                    xturnimg.style.display = "none";
+                    oturnimg.style.display = "block";
+                    let img = document.createElement('img');
+                    img.src = 'WhilePlayingX.png';
+                    div.appendChild(img);
+                    board[index] = "X";
+                    checkWinningCondition(board);
+                    switchtries++;
+                }
+
+            } else {
+                if (board[index] == "") {
+                    oturnimg.style.display = "none";
+                    xturnimg.style.display = "block";
+                    let img2 = document.createElement('img');
+                    img2.src = 'WhilePlayingO.png';
+                    div.appendChild(img2);
+                    board[index] = "O";
+                    checkWinningCondition(board);
+                    switchtries++;
+                }
             }
         }
 
     })
 });
-
-
-let quitdiv = document.querySelector(".quitdiv");
-
-
 
 quitdiv.addEventListener("click", function () {
     secondPage.style.display = "none";
@@ -206,12 +205,7 @@ quitdiv.addEventListener("click", function () {
     osvg.style.opacity = "1";
     xturnimg.style.display = "block";
     oturnimg.style.display = "none";
-    
-
 })
-
-
-let nextrounddiv = document.querySelector(".nextrounddiv");
 
 nextrounddiv.addEventListener("click", function () {
     secondPage.style.display = "flex";
@@ -236,11 +230,6 @@ nextrounddiv.addEventListener("click", function () {
     xturnimg.style.display = "block";
     oturnimg.style.display = "none";
 })
-
-let restartbutton = document.querySelector(".restartbutton");
-let restartGame = document.querySelector(".restartGame");
-let cancelDiv = document.querySelector(".cancelDiv");
-let yesrestartdiv = document.querySelector(".yesrestartdiv");
 
 restartbutton.addEventListener("click", function () {
     restartGame.style.display = "flex";
@@ -274,7 +263,7 @@ cancelDiv.addEventListener("click", function () {
     osvg.style.opacity = "1";
 })
 
-yesrestartdiv.addEventListener("click",function(){
+yesrestartdiv.addEventListener("click", function () {
     restartGame.style.display = "none";
     container.style.backgroundColor = "#1A2A33";
     secondContainer.style.backgroundColor = "#1A2A33";
@@ -288,7 +277,7 @@ yesrestartdiv.addEventListener("click",function(){
     xsvg.style.opacity = "1";
     osvg.style.backgroundColor = "#1A2A33";
     osvg.style.opacity = "1";
-        switchtries = 0;
+    switchtries = 0;
     clickDivs.forEach(div => {
         div.innerHTML = "";
     });
@@ -296,4 +285,47 @@ yesrestartdiv.addEventListener("click",function(){
     xturnimg.style.display = "block";
     oturnimg.style.display = "none";
 })
+
+vscpu.addEventListener("click", function () {
+    newgameplayerscheck++;
+    firstPage.style.display = "none";
+    secondPage.style.display = "block";
+    if (turnOfX == 1) {
+        forFirst.innerHTML = "X (YOU)"
+        forSecond.innerHTML = "O (CPU)"
+    } else {
+        forFirst.innerHTML = "X (CPU)"
+        forSecond.innerHTML = "O (YOU)"
+    }
+});
+
+clickDivs.forEach((div, index) => {
+    div.addEventListener("click", function () {
+       
+            if (takesround[0].style.display === "flex") {
+                return;
+            }
+
+            if (switchtries % 2 == 0) {
+                if (board[index] == "") {
+                    xturnimg.style.display = "none";
+                    oturnimg.style.display = "block";
+                    let img = document.createElement('img');
+                    img.src = 'WhilePlayingX.png';
+                    div.appendChild(img);
+                    board[index] = "X";
+                    checkWinningCondition(board);
+                    switchtries++;
+                }
+
+            } 
+        
+
+    })
+});
+
+
+
+
+
 
